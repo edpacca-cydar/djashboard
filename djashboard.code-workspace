@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../djashboard"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"env/": true,
+			".vscode/": true
+		}
+	}
+}
