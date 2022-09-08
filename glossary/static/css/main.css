@@ -1,0 +1,47 @@
+:root {
+    --gold: #ffc400;
+    --green: #0CAB4E;
+    --light-grey: #A5A5A5;
+    --dark-grey: #4e4e4e;
+    --dark-purple: #21005e;
+    --bright-purple: #5900ff;
+    --light-purple: #261d50;
+    --darkmode-bg-color: #040018;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+body.dark-mode {
+    background: var(--darkmode-bg-color);
+    color: white;
+}
+
+.main-body {
+    padding: 2em;
+}
+
+h2 {
+    color: var(--bright-purple);
+}
+
+body.dark-mode h2 {
+    color: var(--gold);
+}
+
+/* Entries */
+.entry-container {
+    margin-bottom: 1.5em;
+}
+
+.entry-header {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--dark-purple);
+}
+
+body.dark-mode .entry-header {
+    color: var(--green);
+}
