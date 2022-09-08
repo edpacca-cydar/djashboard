@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="glossary-container">
+    {% for d in domains %}
+        <div class="domain-container">
+            <hr>
+            <h2>{% if d.domain.acronym %}{{ d.domain.acronym }} - {% endif %}{{ d.domain.title }}</h2>
+            <hr>
+            <div class="description">{{ d.domain.description }}</div>
+        </div>
+        {% for entry in d.entries %}
+            <div class="entry-container">
+                <div class="entry-header">{% if entry.acronym %}{{ entry.acronym }} - {% endif %}{{ entry.title }}</div class="entry-header">
+                <div class="description">
+                    {{ entry.description }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock content %}

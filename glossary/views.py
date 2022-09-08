@@ -1,21 +1,23 @@
 from django.shortcuts import render
+from .models import Domain, Entry
 
-entries = [
-    {
-        'title': 'ITG',
-        'acronym': 'In Theatre GUI',
-        'description': 'Graphical user interface for the in theatre bit that the surgeon sees for cydar which shows all the shmancy stuff'
-    },
-    {
-        'title': 'Vault',
-        'description': 'Bit that gets all the data and does stuff with it'
-    },
-]
+def entries(request):
 
-# Create your views here.
-def home(request):
+    domains = []
+
+    for domain in Domain.objects.all():
+        domains.append({
+            'domain' : domain,
+            'entries': get_domain_entries(domain)
+        })
+
+    return render(request, 'entries.html', {'domains': domains})
+
+def entry(request, entry_id):
     context = {
-        'entries': entries
+        'entry': Entry.objects.get(id=entry_id)
     }
-    return render(request, 'table.html', context)
+    return render(request, 'entry.html', context)
 
+def get_domain_entries(domain):
+    return Entry.objects.filter(domain=domain)

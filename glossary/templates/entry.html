@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="entry-container">
+    <div>
+        {% if entry.acronym %}
+        <h2>{{ entry.acronym }}</h2>
+        {% endif %}
+        <h2>{{ entry.title }}</h2>    
+        <div class="description">
+            {{ entry.description }}
+        </div>
+    </div>
+</div>
+{% endblock %}

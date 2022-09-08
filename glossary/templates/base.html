@@ -1,42 +1,20 @@
+{% load static %}
+{% include 'navbar.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    <script src={% static 'js/scripts.js' %}></script>
+    <title>Cydar Glossary</title>
 </head>
-<body>
-    <h1>Glossary</h1>
-    {% block content %}{% endblock %}
+<body class="body">
+    <div class="main-body">
+        {% block content %}
+        {% endblock content %}
+    </div>
 </body>
 </html>
-
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    h1 {
-        color: purple;
-    }
-
-    table {
-        border: 2px solid teal;
-        border-collapse: collapse;
-    }
-    
-    th {
-        border: 2px solid teal;
-        padding: 1em;
-    }
-
-    tr {
-        border-bottom: 1px solid teal;
-    }
-
-    td {
-        border-right: 1px solid teal;
-    }
-
-</style>
